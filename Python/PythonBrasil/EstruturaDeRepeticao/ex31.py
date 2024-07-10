@@ -14,4 +14,16 @@
 # Dinheiro: R$ 20.00
 # Troco: R$ 11.00
 # ...
-
+while True:
+    print('Lojas Tabajara')
+    i = 1
+    total = 0.0
+    while True:
+        valor = float(input(f'Produto {i}: R$'))
+        if valor == 0:
+            break
+        total += valor
+        i += 1
+    print(f'Total: R${total:.2f}')
+    dinheiro = float(input('Dinheiro: R$'))
+    print(f'Troco: R${dinheiro - total:.2f}')
