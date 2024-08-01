@@ -8,12 +8,32 @@
 
 from dataclasses import dataclass
 
-@dataclass
+@dataclass(frozen=True) # (init=False) serve para desativar metodos e configurações
 class Pessoa:
     nome: str
-    idade: int
+    sobrenome: str
+    # def __init__(self, nome, sobrenome):
+    #     self.nome = nome
+    #     self.sobrenome = sobrenome
+    #     self.nome_completo = f'{self.nome} {self.sobrenome}'
+
+    # def __post_init__(self): # Com a def de init o post_init não é executado
+    #     self.nome_completo = f'{self.nome} {self.sobrenome}'
+
+    # # @property
+    # # def nome_completo(self):
+    # #     return f'{self.nome} {self.sobrenome}'
+
+    # # @nome_completo.setter
+    # # def nome_completo(self, valor: str):
+    # #     nome, *sobrenome = valor.split()
+    # #     self.nome = nome
+    # #     self.sobrenome = ' '.join(sobrenome)
+
 
 if __name__ == '__main__':
-    p1 = Pessoa('Lucas',20)
-    p2 = Pessoa('Lucas',20)
-    print(p1 == p2)
+    p1 = Pessoa('Lucas', 'Martins')
+    # p1.nome_completo = 'Maria Helena'
+    # p1.nome = 'Tiago' não é possivel quando @dataclass(frozen=True)
+    print(p1)
+    # print(p1.nome_completo)
