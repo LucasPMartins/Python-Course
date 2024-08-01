@@ -32,7 +32,7 @@ class MyList(Sequence):
     def __next__(self):
         if self._next_index >= self._index:
             self._next_index = 0
-            raise StopIteration
+            raise StopIteration # Não mostra no terminal
 
         value = self._data[self._next_index]
         self._next_index += 1
