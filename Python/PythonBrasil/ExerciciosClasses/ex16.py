@@ -3,14 +3,14 @@
 # quando uma opção secreta, não listada no menu, for informada na escolha do usuário. 
 # Dica: acrescente um método especial str() à classe Bichinho.
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 @dataclass
 class Tamagushi:
     _nome: str
-    _idade: int = field(default=1, init=False)
-    _fome: int = field(default=100, init=False)
-    _saude: int = field(default=100, init=False)
+    _idade: int 
+    _fome: int 
+    _saude: int 
 
     @property
     def nome(self) -> str:
@@ -53,10 +53,3 @@ class Tamagushi:
     def __str__(self) -> str:
         return f'Nome: {self.nome}, Idade: {self.idade}, Humor: {self.humor()}\n'\
                f'Fome: {self.fome} e Saude: {self.saude}'
-
-
-# Exemplo de uso
-tamagushi = Tamagushi("Tama")
-print(tamagushi)
-print('Humor:',tamagushi.humor())
-print(tamagushi)
