@@ -3,10 +3,6 @@
 # ou teste interativamente, criando pelo menos dois macacos, alimentando-os com pelo 
 # menos 3 alimentos diferentes e verificando o conteúdo do estomago a cada refeição. 
 # Experimente fazer com que um macaco coma o outro. É possível criar um macaco canibal?
-
-from typing import Any
-
-
 class Macaco:
     def __init__(self, nome: str) -> None:
         self.nome = nome
