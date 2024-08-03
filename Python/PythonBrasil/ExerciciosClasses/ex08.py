@@ -4,6 +4,9 @@
 # menos 3 alimentos diferentes e verificando o conteúdo do estomago a cada refeição. 
 # Experimente fazer com que um macaco coma o outro. É possível criar um macaco canibal?
 
+from typing import Any
+
+
 class Macaco:
     def __init__(self, nome: str) -> None:
         self.nome = nome
@@ -14,7 +17,12 @@ class Macaco:
 
     def ver_bucho(self) -> None:
         if self.bucho:
-            print(f"{self.nome} tem no bucho: {', '.join(self.bucho)}")
+            print(f"{self.nome} tem no bucho: ",end='')
+            for i,comida in enumerate(self.bucho):
+                if i == len(self.bucho) - 1:
+                    print(f'{comida}')
+                else:
+                    print(f'{comida}, ',end='')
         else:
             print(f"O bucho de {self.nome} está vazio.")
 
@@ -23,6 +31,9 @@ class Macaco:
             print(f"{self.nome} digeriu: {self.bucho.pop(0)}")
         else:
             print(f"{self.nome} não tem nada no bucho para digerir.")
+
+    def __str__(self) -> str:
+        return self.nome
 
 # Programa de teste
 def main():
@@ -53,7 +64,7 @@ def main():
     macaco2.ver_bucho()
     
     # Macaco1 come Macaco2
-    macaco1.comer("Macaco2")
+    macaco1.comer(macaco2)
     macaco1.ver_bucho()
 
 if __name__ == "__main__":
