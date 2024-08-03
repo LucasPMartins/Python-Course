@@ -8,8 +8,8 @@
 
 class Retangulo:
     def __init__(self,base: float | int,altura: float | int) -> None:
-        self._base = base  / 100  # Convertendo de cm para m
-        self._altura = altura / 100  # Convertendo de cm para m
+        self._base = base
+        self._altura = altura
     
     @property
     def base(self) -> float:
@@ -18,7 +18,7 @@ class Retangulo:
     def base(self,nova_base: float) -> None:
         if nova_base < 0:
             raise ValueError("A base de um retangulo não pode ser negativo.")
-        self._base = nova_base / 100  # Convertendo de cm para m
+        self._base = nova_base
     @property
     def altura(self) -> float:
         return self._altura
@@ -26,7 +26,7 @@ class Retangulo:
     def altura(self,nova_altura: float) -> None:
         if nova_altura < 0:
             raise ValueError("A altura de um retangulo não pode ser negativo.")
-        self._altura = nova_altura / 100  # Convertendo de cm para m
+        self._altura = nova_altura
 
     def calcula_area(self) -> float:
         return self._base * self._altura
