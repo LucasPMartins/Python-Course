@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ .heading {
+    transition: all 300ms ease-in-out;
+}
+
+.heading:hover {
+    background: red;
+}
+
+a {
+    color: darkorange;
+}
+
+a:link {
+    color: deeppink;
+}
+
+a:visited {
+    color: firebrick;
+}
+
+a:hover {
+    background: darkslateblue;
+    color: white;
+    text-decoration: none;
+    transition: all 2s ease-in-out;
+}
+
+a:active {
+    background: darkslategray;
+    color: white;
+    text-decoration: none;
+    transition: all 2s ease-in-out;
+} 
+*/
+
+/* 
+input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    outline: none;
+    border: 1px solid black;
+}
+
+input:disabled {
+    background: red;
+    cursor: not-allowed;
+}
+
+input:enabled {
+    background: green;
+} */
+
+/* input:checked+p {
+    background: red;
+} */
+
+.pai .lista li:last-child {
+    background: red;
+}
+
+input:required {
+    background: red;
+}
