@@ -1,33 +1,57 @@
-/* ul li::before {
-    content: " - ";
-    background: red;
-    color: #fff;
-    display: block;
-} */
-::placeholder {
-    color: red;
-}
+/* 
+ID    Classes, atributos e pseudo-classes    Elementos e pseudo-elementos
+1     0                                      0
+0     1                                      0
+1     1                                      0
+1     0                                      1
+1     1                                      1
+2     1                                      2
+2     2                                      2
 
-.form-fild::placeholder {
-    color: black;
-}
+1° Especificiade
+2º empate
+3º style
+4° !important ***
 
-/* p {
-    font-size: 24px;
-} */
-
-/* p::first-letter {
-    font-size: 150px;
-    display: block;
-    float: left;
-    margin: 0 10px 10px 0;
-}
-
-p::first-line {
+*/
+/* ID */
+#p {
     background: red;
 }
 
-p::selection {
+/* CLASS */
+.p {
+    background: green !important;
+}
+
+/* class = p e id = p */
+#p.p {
+    background: yellow;
+}
+
+/* <p> que tem um id = p */
+p#p {
+    background: blue;
+}
+
+/* <p> que tem um id = p e class = p */
+p#p.p {
+    background: brown;
+}
+
+/* body com id =b com <p> com id = p e class = p */
+body#b p#p.p {
+    background: orange;
+}
+
+/* body com id = b e class = bclass com <p> com id = p e class = p */
+body#b.bclass p#p.p::selection:hover {
     background: black;
     color: white;
+}
+
+/* .main_container .header .heading {
+    ...
 } */
+
+/* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
