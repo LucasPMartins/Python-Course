@@ -4,7 +4,7 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=bc121c&size=45&center=true&vCenter=true&width=1000&lines=Programming+Exercises)](https://git.io/typing-svg)
 
 ## ❔ About
-This repository contains a collection of solved exercises and class notes in several programming languages. It is organized by language to make it easier to navigate and search for specific examples. Each directory represents a programming language and contains exercises that cover different concepts and difficulty levels.
+This repository contains a collection of solved exercises and class notes in several programming and markup languages. It is organized by language to make it easier to navigate and search for specific examples. Each directory represents a programming language and contains exercises that cover different concepts and difficulty levels.
 
 ## 🛠 Tools:
 ![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-0D1117?style=for-the-badge&logo=visual-studio-code&logoColor=007ACC&labelColor=0D1117)&nbsp;
