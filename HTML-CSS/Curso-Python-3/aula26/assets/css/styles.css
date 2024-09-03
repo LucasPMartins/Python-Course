@@ -1,116 +1,33 @@
+/* https://developer.mozilla.org/pt-BR/docs/Learn/CSS/CSS_layout/Flexbox */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+.flex-container {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    flex-flow: row wrap;
+    /* align-content: space-between; */
+    background: yellow;
+    /* width: 200px; */
+    /* gap: 30px; */
 }
 
-body {
-    font-family: sans-serif;
+.flex-item {
+    flex-grow: 1;
+    flex-basis: 320px;
+    height: 200px;
+    width: 32%;
+    color: #fff;
+    background: red;
+    /* margin-bottom: 2%; */
+    /* margin: 10px; */
 }
 
-.grid {
-    /* box-sizing: border-box; */
-    max-width: 1200px;
-    padding: 15px;
-    margin: 0 auto;
-    padding-top: 73px;
-}
-
-.grid::after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.grid .col {
-    box-sizing: border-box;
-    width: 33.33%;
-    height: 300px;
-    /* background: red;
-    margin: 30px; */
-    float: left;
-    padding: 15px;
-}
-
-.grid .col-content {
-    width: 100%;
-    height: 100%;
-    background: rgb(255, 0, 0);
-    border-radius: 20px 20px 20px 20px;
-    box-shadow: -8px 8px 15px 5px blue;
-}
-
-.menu {
-    width: 100%;
-    position: fixed;
-    background: rgba(0, 0, 0, 0.938);
-}
-
-.menu ul {
-    list-style: none;
-    display: block;
-    max-width: 1200px;
-    padding: 0 30px;
-    margin: 0 auto;
-}
-
-.menu ul li {
-    float: left;
-}
-
-.menu ul li a {
-    display: block;
-    color: white;
-    padding: 20px;
-    text-decoration: none;
-    transition: all 300ms ease-in-out;
-}
-
-.menu ul li a:hover {
-    background: #333;
-}
-
-.full-page {
-    max-width: 100%;
-    padding: 0 30px;
-    height: 100vh;
-    background: turquoise;
-}
-
-.full-page-content {
-    max-width: 1200px;
-    padding: 0 30px;
-    margin: 0 auto;
-}
-
-@media all and (max-width:320px) {
-    .grid .col {
-        width: 100%
-    }
-}
-
-@media all and (min-width:321px) and (max-width:768px) {
-    .grid .col {
-        width: 50%
-    }
-}
-
-@media all and (min-width:769px) and (max-width:1200px) {
-    .grid .col {
-        width: 33.33%
-    }
-}
-
-@media all and (min-width:1200px) {
-    .grid .col {
-        width: 33.33%
-    }
-}
-
-/* https://devfacts.com/media-queries-breakpoints-2021/ */
-/* https://devfacts.com/media-queries-breakpoints-2021/ */
-/* https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_media_queries/Using_media_queries */
+/* .flex-item:nth-child(3) {
+    font-size: 40px;
+} */
