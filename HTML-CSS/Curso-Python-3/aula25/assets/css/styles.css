@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.grid {
+    /* box-sizing: border-box; */
+    padding: 15px;
+}
+
+.grid::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.grid .col {
+    box-sizing: border-box;
+    width: 33.33%;
+    height: 300px;
+    /* background: red;
+    margin: 30px; */
+    float: left;
+    padding: 15px;
+}
+
+.grid .col-content {
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 0, 0);
+    color: #fff;
+
+}
+
+@media all and (max-width:320px) {
+    .grid .col {
+        width: 100%
+    }
+}
+
+@media all and (min-width:321px) and (max-width:768px) {
+    .grid .col {
+        width: 50%
+    }
+}
+
+@media all and (min-width:769px) and (max-width:1200px) {
+    .grid .col {
+        width: 33.33%
+    }
+}
+
+@media all and (min-width:1200px) {
+    .grid .col {
+        width: 33.33%
+    }
+}
+
+/* https://devfacts.com/media-queries-breakpoints-2021/ */
+/* https://devfacts.com/media-queries-breakpoints-2021/ */
+/* https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_media_queries/Using_media_queries */
