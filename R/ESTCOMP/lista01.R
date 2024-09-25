@@ -63,7 +63,7 @@ posicoes_impares <- which(vetor %% 2 != 0)
 print(posicoes_impares)
 
 # Exercício 5 ----------------------------------------
-  
+
 lancamentos_4 <-function(){
   dado <- c()
   count <- 0
@@ -79,4 +79,36 @@ lancamentos_4 <-function(){
 
 vezes <- lancamentos_4()
 print(vezes)
+
+# Exercício 6 ----------------------------------------
+
+quantidade <- c()
+
+for(i in 1:10000){
+  valor <- lancamentos_4()
+  quantidade <- c(quantidade,valor)
+}
+
+mean(quantidade)
+
+# Exercício 7 ----------------------------------------
+
+fibonacci <- function(n){
+  sequencia <- c(1,1)
+  anterio <- 1
+  atual <- 2
+  n <- n - 2
+  while(n > 0){
+    sequencia <- c(sequencia,(sequencia[anterio] + sequencia[atual]))
+    n <- n - 1
+    anterio <- anterio + 1
+    atual <- atual + 1
+  }
+  return (sequencia)
+}
+
+teste <- fibonacci(10)
+teste
+
+# Exercício 8 ----------------------------------------
 
