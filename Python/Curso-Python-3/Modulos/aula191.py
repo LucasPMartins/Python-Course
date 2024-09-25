@@ -12,3 +12,6 @@ print(response.status_code)
 # print(response.content)
 # print(response.json())
 print(response.text)
+
+# Subir um site
+# python -m http.server -d arquivo porta(3333)
