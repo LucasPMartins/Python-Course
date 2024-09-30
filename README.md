@@ -1,23 +1,23 @@
+# Python 3 Course
 
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=bc121c&height=120&section=header"/>
+This repository contains class notes and solved exercises to reinforce the knowledge acquired in the Python 3 course. With more than **120 hours of content** and more than **620 classes**, the course covers everything from basic concepts to advanced topics, in addition to including bonus sections on key areas for web development and automation.
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=bc121c&size=45&center=true&vCenter=true&width=1000&lines=Programming+Exercises)](https://git.io/typing-svg)
+## What I learned:
+- **Basic Python 3**: Fundamentals of programming logic and introduction to the language.
+- **Intermediate Python 3**: Procedural and functional programming.
+- **Advanced Python 3**: Object-oriented programming (OOP).
+- **Python 3 Modules**: Using libraries such as PySide6 (Graphical Interface with Qt 6), Selenium, Django, among others.
+- **Django**: Creating websites and APIs for web development.
+- **Relational Databases**: Integration with SQLite3, MySQL and MariaDB.
+- **Automated Tests**: Principles of TDD (Test-Driven Development) applied to projects.
+- **Design Patterns**: Application of the main Design Patterns of the Gang of Four (GoF).
 
-## ❔ About
-This repository contains a collection of solved exercises and class notes in several programming and markup languages. It is organized by language to make it easier to navigate and search for specific examples. Each directory represents a programming language and contains exercises that cover different concepts and difficulty levels.
+## Bonus Sections:
+- **Regular Expressions**: Advanced string manipulation.
+- **HTML5 and CSS3**: Fundamentals for creating web pages.
+- **SQL with MySQL**: Queries and management of relational databases.
+- **Unix Commands**: Operation in Linux, Mac and Windows terminals (via WSL2).
 
-## 🛠 Tools:
-![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-0D1117?style=for-the-badge&logo=visual-studio-code&logoColor=007ACC&labelColor=0D1117)&nbsp;
-![Git](https://img.shields.io/badge/-Git-0D1117?style=for-the-badge&logo=git&labelColor=0D1117)&nbsp;
-![GitHub](https://img.shields.io/badge/-GitHub-0D1117?style=for-the-badge&logo=github&labelColor=0D1117)&nbsp;
-![Windows](https://img.shields.io/badge/-Windows-0D1117?style=for-the-badge&logo=windows&logoColor=0a58ee)&nbsp;
+This course is ideal for those who want to master Python 3 and its main tools, from basic programming to the development of robust applications, following best practices.
 
-## 👨‍💻 Programming Languages
-![C](https://img.shields.io/badge/c-0D1117?style=for-the-badge&logo=c&logoColor=0a58ee)
-![Python](https://img.shields.io/badge/python-0D1117?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Haskell](https://img.shields.io/badge/Haskell-0D1117?style=for-the-badge&logo=haskell&logoColor=purple)
-![Java](https://img.shields.io/badge/java-0D1117.svg?style=for-the-badge&logo=openjdk&logoColor=orange)
-![Assembly](https://img.shields.io/badge/assembly-0D1117.svg?style=for-the-badge&logo=assemblyscript&logoColor=white)
-
-
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=bc121c&height=120&section=footer"/>
+I would like to give a special thanks to professor **Luiz Otávio Miranda**, whose teaching skills and knowledge on the subject made this learning process enriching and rewarding.
