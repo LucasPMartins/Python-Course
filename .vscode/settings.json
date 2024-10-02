@@ -20,6 +20,7 @@
     "python.analysis.typeCheckingMode": "basic",
     "cSpell.language": "en,pt",
     "cSpell.words": [
+        "exif",
         "openpyxl",
         "sheetnames"
     ],
