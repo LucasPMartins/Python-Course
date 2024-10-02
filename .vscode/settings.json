@@ -18,4 +18,9 @@
     "python.analysis.diagnosticSeverityOverrides": {},
     // "python.defaultInterpreterPath": "./venv/bin/python",
     "python.analysis.typeCheckingMode": "basic",
+    "cSpell.language": "en,pt",
+    "cSpell.words": [
+        "openpyxl",
+        "sheetnames"
+    ],
 }
