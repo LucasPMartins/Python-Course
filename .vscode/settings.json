@@ -22,6 +22,8 @@
     "cSpell.words": [
         "exif",
         "openpyxl",
-        "sheetnames"
+        "pyside",
+        "sheetnames",
+        "venv"
     ],
 }
