@@ -20,6 +20,8 @@
     "python.analysis.typeCheckingMode": "basic",
     "cSpell.language": "en,pt",
     "cSpell.words": [
+        "acao",
+        "botao",
         "exif",
         "openpyxl",
         "pyside",
