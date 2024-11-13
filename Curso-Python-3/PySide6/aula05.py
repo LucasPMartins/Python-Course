@@ -66,4 +66,4 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = MyWindow()
     window.show()
-    app.exec()  # O loop da aplicação
+    app.exec()  # O loop da aplicação 
