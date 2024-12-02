@@ -1,0 +1,11 @@
+Como compilar de .ui para .py:
+-- pyside6-uic nomeArquivo.ui -o nomeArquivo.pyside6
+
+Atenção:
+Todas as alterações feitas neste arquivo serão perdidas ao recompilar o arquivo UI!
+
+Dicas:
+- Sempre faça backup do arquivo .ui antes de recompilar.
+- Utilize um sistema de controle de versão (como Git) para gerenciar as alterações no código.
+- Verifique se todas as dependências do PySide6 estão instaladas corretamente.
+- Teste a interface gerada para garantir que todos os componentes estão funcionando como esperado.
