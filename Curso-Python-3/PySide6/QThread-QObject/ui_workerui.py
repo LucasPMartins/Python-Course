@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'workerUI.ui'
+## Form generated from reading UI file 'workerui.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.7.3
+## Created by: Qt User Interface Compiler version 6.4.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -23,33 +23,32 @@ class Ui_myWidget(object):
         if not myWidget.objectName():
             myWidget.setObjectName(u"myWidget")
         myWidget.resize(400, 300)
+        font = QFont()
+        font.setPointSize(40)
+        myWidget.setFont(font)
         self.horizontalLayout = QHBoxLayout(myWidget)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.label_2 = QLabel(myWidget)
-        self.label_2.setObjectName(u"label_2")
-        font = QFont()
-        font.setPointSize(40)
-        self.label_2.setFont(font)
+        self.label2 = QLabel(myWidget)
+        self.label2.setObjectName(u"label2")
 
-        self.gridLayout.addWidget(self.label_2, 1, 1, 1, 1)
+        self.gridLayout.addWidget(self.label2, 0, 1, 1, 1)
 
-        self.label_1 = QLabel(myWidget)
-        self.label_1.setObjectName(u"label_1")
-        self.label_1.setFont(font)
+        self.label1 = QLabel(myWidget)
+        self.label1.setObjectName(u"label1")
 
-        self.gridLayout.addWidget(self.label_1, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.label1, 0, 0, 1, 1)
 
-        self.button_1 = QPushButton(myWidget)
-        self.button_1.setObjectName(u"button_1")
+        self.button1 = QPushButton(myWidget)
+        self.button1.setObjectName(u"button1")
 
-        self.gridLayout.addWidget(self.button_1, 2, 0, 1, 1)
+        self.gridLayout.addWidget(self.button1, 1, 0, 1, 1)
 
-        self.button_2 = QPushButton(myWidget)
-        self.button_2.setObjectName(u"button_2")
+        self.button2 = QPushButton(myWidget)
+        self.button2.setObjectName(u"button2")
 
-        self.gridLayout.addWidget(self.button_2, 2, 1, 1, 1)
+        self.gridLayout.addWidget(self.button2, 1, 1, 1, 1)
 
 
         self.horizontalLayout.addLayout(self.gridLayout)
@@ -62,9 +61,8 @@ class Ui_myWidget(object):
 
     def retranslateUi(self, myWidget):
         myWidget.setWindowTitle(QCoreApplication.translate("myWidget", u"Form", None))
-        self.label_2.setText(QCoreApplication.translate("myWidget", u"L2", None))
-        self.label_1.setText(QCoreApplication.translate("myWidget", u"L1", None))
-        self.button_1.setText(QCoreApplication.translate("myWidget", u"B1", None))
-        self.button_2.setText(QCoreApplication.translate("myWidget", u"B2", None))
+        self.label2.setText(QCoreApplication.translate("myWidget", u"L2", None))
+        self.label1.setText(QCoreApplication.translate("myWidget", u"L1", None))
+        self.button1.setText(QCoreApplication.translate("myWidget", u"B1", None))
+        self.button2.setText(QCoreApplication.translate("myWidget", u"B2", None))
     # retranslateUi
-
