@@ -2,6 +2,7 @@
 .cspell
 cspell.json
 
+mysql_206
 .env
 
 # Byte-compiled / optimized / DLL files
