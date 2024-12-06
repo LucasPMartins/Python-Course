@@ -1,9 +1,14 @@
 # PyMySQL - um cliente MySQL feito em Python Puro
+# Pypy: https://pypi.org/project/pymysql/
+# GitHub: https://github.com/PyMySQL/PyMySQL
+
 import pymysql
+import pymysql.cursors
 import dotenv
 import os
 
 TABLE_NAME = 'customers'
+CURRENT_CURSOR = pymysql.cursors.DictCursor
 
 # Carrega as variáveis de ambiente
 dotenv.load_dotenv()
@@ -14,6 +19,7 @@ connection = pymysql.connect(
     user=os.environ['MYSQL_USER'],
     password=os.environ['MYSQL_PASSWORD'],
     database=os.environ['MYSQL_DATABASE'],
+    cursorclass=CURRENT_CURSOR,
 )
 
 # Criação de tabelas
@@ -85,4 +91,41 @@ with connection:
         cursor.execute(sql,input_id)
         result = cursor.fetchall()
         for row in result:
+            print(row)
+
+    print('Deletando registros:')
+    with connection.cursor() as cursor:
+        sql = (
+            f'DELETE FROM {TABLE_NAME} '
+            'WHERE id = 1'
+        )
+        cursor.execute(sql)
+        connection.commit() 
+        sql = (
+            f'SELECT * FROM {TABLE_NAME} '
+        )
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        for row in result:
+            print(row)
+
+    print('Atualizando registros:')
+    with connection.cursor() as cursor:
+        sql = (
+            f'UPDATE {TABLE_NAME} '
+            'SET age = %s '
+            'WHERE id = 2'
+        )
+        cursor.execute(sql,60)
+        connection.commit()
+        sql = (
+            f'SELECT * FROM {TABLE_NAME} '
+        )
+        result = cursor.execute(sql)
+        print('Total de registros:',result)
+        # Ou
+        # print('Total de registros:',cursor.rowcount)
+        # Ou
+        # print('Total de registros:',len(cursor.fetchall()))
+        for row in cursor.fetchall():
             print(row)
