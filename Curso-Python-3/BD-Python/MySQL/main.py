@@ -1,116 +1,88 @@
 # PyMySQL - um cliente MySQL feito em Python Puro
-# Doc: https://pymysql.readthedocs.io/en/latest/
-# Pypy: https://pypi.org/project/pymysql/
-# GitHub: https://github.com/PyMySQL/PyMySQL
-import os
-
-import dotenv
 import pymysql
+import dotenv
+import os
 
 TABLE_NAME = 'customers'
 
+# Carrega as variáveis de ambiente
 dotenv.load_dotenv()
 
+# Conexão com o banco de dados
 connection = pymysql.connect(
     host=os.environ['MYSQL_HOST'],
     user=os.environ['MYSQL_USER'],
     password=os.environ['MYSQL_PASSWORD'],
     database=os.environ['MYSQL_DATABASE'],
-    charset='utf8mb4'
 )
 
+# Criação de tabelas
 with connection:
     with connection.cursor() as cursor:
-        cursor.execute(  # type: ignore
-            f'CREATE TABLE IF NOT EXISTS {TABLE_NAME} ('
+        cursor.execute(
+            f'CREATE TABLE IF NOT EXISTS {TABLE_NAME} ( '
             'id INT NOT NULL AUTO_INCREMENT, '
-            'nome VARCHAR(50) NOT NULL, '
-            'idade INT NOT NULL, '
-            'PRIMARY KEY (id)'
+            'name VARCHAR(50) NOT NULL, '
+            'age INT NOT NULL, '
+            'PRIMARY KEY (id) '
             ') '
         )
-        # CUIDADO: ISSO LIMPA A TABELA
-        cursor.execute(f'TRUNCATE TABLE {TABLE_NAME}')  # type: ignore
+        # Limpa a tabela
+        cursor.execute(
+            f'TRUNCATE TABLE {TABLE_NAME}'
+        )
     connection.commit()
-
-    # Começo a manipular dados a partir daqui
-
-    # Inserindo um valor usando placeholder e um iterável
+    
+    # Manipulação de dados
+    print('Inserindo registros:')
     with connection.cursor() as cursor:
-        sql = (
-            f'INSERT INTO {TABLE_NAME} '
-            '(nome, idade) '
-            'VALUES '
-            '(%s, %s) '
+        sql = f'INSERT INTO {TABLE_NAME} (name, age) VALUES (%s, %s)'
+        result = cursor.executemany(
+            sql,
+            (('João', 30), ('Maria', 25), ('Helena', 40), ('Joana', 35))
         )
-        data = ('Luiz', 18)
-        result = cursor.execute(sql, data)  # type: ignore
-        # print(sql, data)
-        # print(result)
+        print('Total inseridos:',result)
     connection.commit()
 
-    # Inserindo um valor usando placeholder e um dicionário
+    print('Inserindo registros com dicionários:')
     with connection.cursor() as cursor:
-        sql = (
-            f'INSERT INTO {TABLE_NAME} '
-            '(nome, idade) '
-            'VALUES '
-            '(%(name)s, %(age)s) '
-        )
-        data2 = {
-            "age": 37,
-            "name": "Le",
-        }
-        result = cursor.execute(sql, data2)  # type: ignore
-        # print(sql)
-        # print(data2)
-        # print(result)
+        sql = f'INSERT INTO {TABLE_NAME} (name, age) VALUES (%(name)s, %(age)s)'
+        data = {'name': 'Luiz', 'age': 30}
+        result = cursor.execute(sql, data)
+        print(sql)
+        print(data)
+        print(result)
     connection.commit()
-
-    # Inserindo vários valores usando placeholder e um tupla de dicionários
-    with connection.cursor() as cursor:
-        sql = (
-            f'INSERT INTO {TABLE_NAME} '
-            '(nome, idade) '
-            'VALUES '
-            '(%(name)s, %(age)s) '
-        )
-        data3 = (
-            {"name": "Sah", "age": 33, },
-            {"name": "Júlia", "age": 74, },
-            {"name": "Rose", "age": 53, },
-        )
-        result = cursor.executemany(sql, data3)  # type: ignore
-        # print(sql)
-        # print(data3)
-        # print(result)
-    connection.commit()
-
-    # Inserindo vários valores usando placeholder e um tupla de tuplas
-    with connection.cursor() as cursor:
-        sql = (
-            f'INSERT INTO {TABLE_NAME} '
-            '(nome, idade) '
-            'VALUES '
-            '(%s, %s) '
-        )
-        data4 = (
-            ("Siri", 22, ),
-            ("Helena", 15, ),
-        )
-        result = cursor.executemany(sql, data4)  # type: ignore
-        # print(sql)
-        # print(data4)
-        # print(result)
-    connection.commit()
-
-    # Lendo os valores com SELECT
+    
+    print('Todos os registros:')
     with connection.cursor() as cursor:
         sql = (
             f'SELECT * FROM {TABLE_NAME} '
         )
-        cursor.execute(sql)  # type: ignore
-        data5 = cursor.fetchall()  # type: ignore
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        for row in result:
+            print(row)
 
-        for row in data5:
+    print('Registros com idade maior que 30:')
+    with connection.cursor() as cursor:
+        sql = (
+            f'SELECT * FROM {TABLE_NAME} '
+            'WHERE age > 30'
+        )
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        for row in result:
+            print(row)
+            
+    print('Teste de SQL Injection:')
+    with connection.cursor() as cursor:
+        input_id = input('Digite o id do registro: ')
+        sql = (
+            f'SELECT * FROM {TABLE_NAME} '
+            f'WHERE id = %s'
+        )
+        cursor.execute(sql,input_id)
+        result = cursor.fetchall()
+        for row in result:
             print(row)
